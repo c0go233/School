@@ -1,0 +1,31 @@
+﻿@model School.ViewModels.IndexViewModel
+
+@if (Model.Students.Count() == 0)
+{
+
+}
+else
+{
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Classroom</th>
+        </tr>
+
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Address</td>
+                <td>@student.Classroom.Name</td>
+            </tr>
+        }
+
+    </table>
+}
+
